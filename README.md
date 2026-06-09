@@ -1,4 +1,6 @@
-# Linux Hardening Assistant v2.0
+# Linux Hardening Assistant
+
+> A modern web application for automated Linux security auditing and hardening with AI-powered recommendations. v2.0
 
 An AI-powered, locally-hosted web application that connects to Linux systems via SSH, performs automated security audits across 16 check categories, generates a scored report, and produces a downloadable remediation script.
 

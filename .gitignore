@@ -21,6 +21,10 @@ reports/*.sh
 reports/*.pdf
 data/history.json
 
+# ── Personal files ────────────────────────────────────────────
+RESUME/
+*.pdf
+
 # ── Logs ──────────────────────────────────────────────────────
 *.log
 logs/

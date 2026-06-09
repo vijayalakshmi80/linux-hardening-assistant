@@ -13,6 +13,9 @@ frontend/node_modules/
 backend/dist/
 backend/public/
 frontend/dist/
+package-lock.json
+backend/package-lock.json
+frontend/package-lock.json
 
 # ── Generated files ───────────────────────────────────────────
 backend/reports/*.sh

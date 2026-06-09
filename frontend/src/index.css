@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  /* Smooth scrollbar */
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #64748b; }
+}
+
+@layer components {
+  /* ── Card ─────────────────────────────────────── */
+  .card {
+    @apply bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden;
+  }
+  .card-header {
+    @apply flex items-center gap-1.5 px-3 py-2.5 text-sm font-semibold text-gray-700 dark:text-gray-200
+           border-b border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-800/50;
+  }
+
+  /* ── Form elements ────────────────────────────── */
+  .form-label {
+    @apply block text-xs font-medium text-gray-600 dark:text-gray-400 mb-0.5;
+  }
+  .form-input {
+    @apply w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800
+           text-gray-900 dark:text-gray-100 text-sm px-2.5 py-1.5
+           focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent
+           disabled:opacity-50 disabled:cursor-not-allowed transition-colors;
+  }
+
+  /* ── Buttons ──────────────────────────────────── */
+  .btn {
+    @apply inline-flex items-center justify-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-medium
+           transition-all duration-150 disabled:opacity-40 disabled:cursor-not-allowed focus:outline-none
+           focus:ring-2 focus:ring-offset-1;
+  }
+  .btn-primary {
+    @apply bg-indigo-600 hover:bg-indigo-700 text-white focus:ring-indigo-500;
+  }
+  .btn-danger {
+    @apply bg-red-600 hover:bg-red-700 text-white focus:ring-red-500;
+  }
+  .btn-outline-info {
+    @apply border border-sky-400 text-sky-600 dark:text-sky-400 hover:bg-sky-50 dark:hover:bg-sky-900/20 focus:ring-sky-400;
+  }
+  .btn-outline-warning {
+    @apply border border-amber-400 text-amber-600 dark:text-amber-400 hover:bg-amber-50 dark:hover:bg-amber-900/20 focus:ring-amber-400;
+  }
+  .btn-outline-success {
+    @apply border border-green-500 text-green-600 dark:text-green-400 hover:bg-green-50 dark:hover:bg-green-900/20 focus:ring-green-500;
+  }
+  .btn-outline-danger {
+    @apply border border-red-400 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 focus:ring-red-400;
+  }
+  .btn-outline-gray {
+    @apply border border-gray-300 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 focus:ring-gray-400;
+  }
+
+  /* ── Fix script code block ───────────────────── */
+  .fix-code {
+    @apply font-mono text-xs leading-relaxed whitespace-pre-wrap break-all;
+  }
+
+  /* ── Chat message bubbles ────────────────────── */
+  .chat-bubble-user {
+    @apply bg-indigo-50 dark:bg-indigo-900/30 rounded-lg px-3 py-2 text-sm;
+  }
+  .chat-bubble-ai {
+    @apply bg-gray-50 dark:bg-gray-800 rounded-lg px-3 py-2 text-sm;
+  }
+
+  /* ── Finding card left borders ───────────────── */
+  .finding-critical { @apply border-l-4 border-red-800; }
+  .finding-high      { @apply border-l-4 border-red-500; }
+  .finding-medium    { @apply border-l-4 border-amber-500; }
+  .finding-low       { @apply border-l-4 border-blue-400; }
+}

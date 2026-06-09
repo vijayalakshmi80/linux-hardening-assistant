@@ -1,0 +1,9 @@
+# Docker ignore file for test target
+# (This target doesn't copy any local files, but good practice)
+
+node_modules
+npm-debug.log
+.git
+.env
+.env.local
+*.md

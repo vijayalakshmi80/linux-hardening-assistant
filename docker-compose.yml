@@ -1,0 +1,47 @@
+# ============================================================
+# Linux Hardening Assistant — Docker Test Environment
+# ============================================================
+# This creates a deliberately vulnerable Ubuntu 22.04 container
+# with SSH enabled for testing the hardening assistant.
+#
+# INTENTIONAL SECURITY ISSUES (for testing):
+# - Root SSH login enabled
+# - Password authentication enabled
+# - No firewall (UFW disabled)
+# - MySQL on 0.0.0.0
+# - Redis on 0.0.0.0
+# - World-writable files
+# - Weak password policy
+# - No Fail2Ban
+# - No Auditd
+# ============================================================
+
+services:
+  # Vulnerable Linux target for testing
+  test-target:
+    build:
+      context: ./docker/test-target
+      dockerfile: Dockerfile
+    container_name: linux-hardening-test-target
+    hostname: vulnerable-ubuntu
+    ports:
+      - "2222:22"        # SSH (host:2222 → container:22)
+      - "3306:3306"      # MySQL (exposed for detection)
+      - "6379:6379"      # Redis (exposed for detection)
+    environment:
+      - ROOT_PASSWORD=testroot123
+      - USER_NAME=testuser
+      - USER_PASSWORD=testpass123
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "nc", "-z", "localhost", "22"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    networks:
+      - hardening-test
+
+networks:
+  hardening-test:
+    driver: bridge

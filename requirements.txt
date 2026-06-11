@@ -1,0 +1,111 @@
+# Linux Hardening Assistant - Requirements
+# This is primarily a Node.js/TypeScript project
+# Python requirements are minimal (only for optional Python-based tools)
+
+# Note: This project uses Node.js, not Python
+# Main dependencies are in:
+#   - backend/package.json (Node.js backend)
+#   - frontend/package.json (React frontend)
+
+# Python Requirements (Optional - for Python tools if needed)
+# ================================================================
+
+# If you want to use Python-based SSH tools (optional):
+paramiko>=3.0.0        # SSH client library
+fabric>=3.0.0          # High-level SSH commands
+invoke>=2.0.0          # Task execution
+
+# If you want Python-based AI tools (optional):
+requests>=2.31.0       # HTTP library
+openai>=1.0.0          # OpenAI API (if using GPT)
+
+# System Requirements
+# ================================================================
+# The actual project requirements are:
+
+# 1. Node.js 18+ (Required)
+#    Download: https://nodejs.org/
+
+# 2. npm (comes with Node.js)
+
+# 3. Docker (Optional, for test environment)
+#    Download: https://www.docker.com/
+
+# 4. Git (for version control)
+#    Download: https://git-scm.com/
+
+# Backend Dependencies (from backend/package.json)
+# ================================================================
+# @google/generative-ai: ^0.21.0
+# @types/express: ^5.0.0
+# @types/node: ^22.10.2
+# axios: ^1.7.9
+# better-sqlite3: ^11.8.1
+# cors: ^2.8.5
+# dotenv: ^16.4.7
+# express: ^4.21.2
+# groq-sdk: ^0.8.0
+# pdfkit: ^0.15.0
+# ssh2: ^1.16.0
+# tsx: ^4.19.2
+# typescript: ^5.7.2
+# winston: ^3.17.0
+# zod: ^3.24.1
+
+# Frontend Dependencies (from frontend/package.json)
+# ================================================================
+# @types/react: ^18.3.1
+# @types/react-dom: ^18.3.1
+# @typescript-eslint/eslint-plugin: ^8.15.0
+# @typescript-eslint/parser: ^8.15.0
+# @vitejs/plugin-react: ^4.3.4
+# autoprefixer: ^10.4.20
+# axios: ^1.7.9
+# chart.js: ^4.4.7
+# eslint: ^9.15.0
+# eslint-plugin-react-hooks: ^5.0.0
+# eslint-plugin-react-refresh: ^0.4.14
+# lucide-react: ^0.469.0
+# postcss: ^8.4.49
+# react: ^18.3.1
+# react-chartjs-2: ^5.3.0
+# react-dom: ^18.3.1
+# react-hot-toast: ^2.4.1
+# tailwindcss: ^3.4.17
+# typescript: ~5.6.2
+# vite: ^5.4.11
+
+# API Keys Required (in .env file)
+# ================================================================
+# GROQ_API_KEY=your_key_here          # Get from: https://console.groq.com/keys
+# GEMINI_API_KEY=your_key_here        # Get from: https://aistudio.google.com/app/apikey (optional)
+
+# Installation Instructions
+# ================================================================
+# This is a Node.js project, not Python. To install:
+#
+# 1. Install Node.js 18+ from https://nodejs.org/
+# 
+# 2. Install backend dependencies:
+#    cd backend
+#    npm install
+#
+# 3. Install frontend dependencies:
+#    cd frontend
+#    npm install
+#
+# 4. Configure environment variables:
+#    cp .env.example .env
+#    # Edit .env and add your API keys
+#
+# 5. Start the application:
+#    # Terminal 1 - Backend
+#    cd backend
+#    npm run dev
+#    
+#    # Terminal 2 - Frontend (optional)
+#    cd frontend
+#    npm run dev
+#
+# 6. Access the application:
+#    http://localhost:3001
